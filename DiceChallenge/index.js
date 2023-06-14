@@ -1,28 +1,33 @@
-// create a random number for left image
-var randomNumber1 = Math.floor((Math.random() * 6) + 1);
-
-// Now changing the image src according to randomNumber1 in left image
-var newImageNameLeft = "./images/dice" + randomNumber1 + ".png";
-document.getElementsByClassName("img1")[0].src = newImageNameLeft;
+//making all this on button click
+document.querySelector(".btn").addEventListener("click", rollDice);
 
 
+function rollDice(){
+    // create a random number for left image
+    var randomNumber1 = Math.floor((Math.random() * 6) + 1);
 
-// create a random number for right image
-var randomNumber2 = Math.floor((Math.random() * 6) + 1);
-
-// Now changing the image src according to randomNumber1 in left image
-var newImageNameRight = "./images/dice" + randomNumber2 + ".png";
-document.getElementsByClassName("img2")[0].src = newImageNameRight;
+    // Now changing the image src according to randomNumber1 in left image
+    var newImageNameLeft = "./images/dice" + randomNumber1 + ".png";
+    document.getElementsByClassName("img1")[0].src = newImageNameLeft;
 
 
 
-//changing heading 
-if(randomNumber1 === randomNumber2)
-    document.querySelector(".container h1").innerHTML = "Draw!";
+    // create a random number for right image
+    var randomNumber2 = Math.floor((Math.random() * 6) + 1);
 
-else if(randomNumber1 > randomNumber2)
-document.querySelector(".container h1").innerHTML = "Player 1 Wins!";
+    // Now changing the image src according to randomNumber1 in left image
+    var newImageNameRight = "./images/dice" + randomNumber2 + ".png";
+    document.getElementsByClassName("img2")[0].src = newImageNameRight;
 
-else 
-document.querySelector(".container h1").innerHTML = "Player 2 Wins!";
 
+
+    //changing heading 
+    if(randomNumber1 === randomNumber2)
+        document.querySelector(".container h1").innerHTML = "Draw!";
+
+    else if(randomNumber1 > randomNumber2)
+    document.querySelector(".container h1").innerHTML = "Player 1 Wins!";
+
+    else 
+    document.querySelector(".container h1").innerHTML = "Player 2 Wins!";
+}
